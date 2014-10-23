@@ -1,4 +1,5 @@
 Blocitoff::Application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,6 +14,7 @@ Blocitoff::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :todos, only: [:new, :create, :show]
 
   # Example resource route with options:
   #   resources :products do
@@ -53,4 +55,6 @@ Blocitoff::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root to: 'home#index'
 end
