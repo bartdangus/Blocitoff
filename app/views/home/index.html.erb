@@ -1,2 +1,14 @@
 
 <h1> Blocitoff ma fucka </h1>
+
+
+<!-- m going to make form -->
+
+
+<%= form_for List.new do |f| %>
+
+  Title: <%= f.text_field :title %>
+
+  <%= f.submit %>
+
+<% end %>
