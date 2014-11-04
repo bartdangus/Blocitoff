@@ -14,5 +14,21 @@ class ListsController < ApplicationController
     end
   end
 
+  def show
+    @list = List.find(params[:id])
+    authorize @list
+
+  end
+
+  def index
+    @lists = List.all
+   
+  end
+
+  private
+
+  def list_params
+    params.require(:list).permit(:title)
+  end  
 
 end
